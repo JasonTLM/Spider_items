@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>斗鱼-单点登录</title>
+    <!-- 公共样式头部提取 -->
+    <link rel="stylesheet" type="text/css" href="https://shark.douyucdn.cn/shark/lib/css/base/1.0/base.css?v=v20190307" /><link rel="stylesheet" type="text/css" href="https://shark.douyucdn.cn/app/douyu-passport/css/page/login-all.css?v=v20190307" /><link rel="stylesheet" type="text/css" href="https://shark.douyucdn.cn/app/douyu-passport/third/art-dialog-dy/skins/blue.css?v=v20190307" /><link rel="stylesheet" type="text/css" href="https://shark.douyucdn.cn/app/douyu-passport/third/jquery.mCustomScrollbar/jquery.mCustomScrollbar.min.css?v=v20190307" />    <!-- 公共样式头部提取end -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e99aee90ec1b2106afe7ec3b199020a7";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    (function() {
+        window._smConf = {
+            organization: 'wKDrWY1bHXkZUIE4g04I',
+            staticHost: 'static.fengkongcloud.com',
+        };
+        var sm = document.createElement("script");
+        sm.src = ('https:' === document.location.protocol ? 'https:' : 'http:') + '//' + _smConf.staticHost + '/fpv2.js';
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(sm, s);
+    })();
+</script>
+<script type="text/javascript">
+    var DYS_PAGE_INITTIME = new Date().getTime();
+    var $SYS = {};
+    $SYS['cookie_pre'] = 'acf_';
+    $SYS['res_url'] = 'https://staticlive.douyucdn.cn/common/';
+    $SYS['res_ver'] = 'v20190307';
+    $SYS['web_url'] = 'https://shark.douyucdn.cn/';
+    $SYS['avatar_url'] = '';
+    $SYS['upload_url'] = 'http://www.douyu.com/';
+    $SYS['sgate'] = '';
+    $SYS['sport'] = [];
+    $SYS['tvk'] = 'ccn';
+    $SYS['tn'] = 'ctn';
+    $SYS['fh'] = 'https://dotcounter.douyucdn.cn/deliver/fish';
+    $SYS['fh2'] = 'https://dotcounter.douyucdn.cn/deliver/fish2';
+    $SYS['lang'] = 'cn';
+    $SYS['ucp_front'] = 'https://ucp.douyucdn.cn/ucp.do';
+    $SYS['pc_auth_port'] = [49155,49165,49175,49185,49195];
+    $SYS['foreign_captcha_type'] = 2;
+</script>
+    <script>
+    var $DYS = {};
+        $DYS['page_init_time'] = new Date().getTime();
+        window.passport_host = 'https://passport.douyu.com/';
+        window.client_id = '1';
+        window.passport_callback = 'https://www.douyu.com/member/cp';
+        window.cpsid = '0';
+        window.i18n_version = '20190306';
+    </script>
+
+</head>
+<body>
+
+<div class="sign-container" id="container">
+    <div id="header" class="sign-header">
+        <div class="wrapper">
+            <a class="sign-logo" href="http://www.douyu.com">
+                <img src="https://shark.douyucdn.cn/app/douyu-passport/res/page/sign/douyu_logo.png?v=v20190307" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- 背景图可配置-->
+    <div class="mainbody" style="background: url(https://shark.douyucdn.cn/app/douyu-passport/res/page/sign/bg.jpg?v=v20190307) center top no-repeat; background-size: cover;">
+        <div class="wrapper sign-con">
+            <!-- 推广图热区可配置 -->
+            <a href="javascript:;" target="_blank" class="hot-ad-con">
+                <img src="">
+            </a>
+
+            <div class="loginbox-con" id="loginbox-con">
+                <div class="loginbox" id="loginbox" data-point="dlk">
+                    <!--#43111-Web端登录-->
+                    <div class="scancode-login status-scan js-scancode-box">
+                        <!-- 右上角 -->
+                        <div class="scanicon-switch-box">
+                            <div class="scanicon-toLogin js-qrcode-switch"></div>
+                            <div class="scancode-tips">
+                                <span class="scancode-tip-icon scancode-tip-lock"></span>
+                                <span class="scancode-tip-words" data-i18n="Login.QrCodeLogin.whereLogin">密码登录在这里</span>
+                            </div>
+                        </div>
+                        <!--#43111-Web端扫码登录插件-->
+                        <!-- 扫码的结构 begin -->
+                        <div class="loginbox-scanwrap">
+                            <div class="scancode-header">
+                                <h2 class="scancode-title" data-i18n="Login.QrCodeLogin.safeToLogin">手机扫码，安全登录</h2>
+                            </div>
+                            <div class="scancode-middle">
+                                <div class="scancode-contrnt clearfix">
+                                    <div class="scancode-qrcode fl">
+                                        <div class="loginbox-scanwrap">
+                                            <div class="loginbox-scancontent">
+                                                <div class="scan-qrcode">
+                                                    <div class="qrcode-img">
+                                                        <div class="qrcode-con js-qrcode-con"></div>
+                                                        <i class="douyu-icon"></i>
+                                                    </div>
+                                                    <div class="qrcode-mask">
+                                                        <div class="qrcode-maskcon">
+                                                            <h2 data-i18n="Login.QrCodeLogin.invalid">二维码已失效</h2>
+                                                            <div>
+                                                                <a href="javascript:;" class="fresh-btn js-qrcode-refresh" data-i18n="Login.QrCodeLogin.freshBtn">点击刷新</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="qrcode-maskbg"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="loginbox-scanmobile">
+                                                <div class="scanmobile-icon"></div>
+                                                <div class="scanmobile-note" data-i18n="Login.QrCodeLogin.confirm">请在手机上确认登录</div>
+                                                <div class="scanmobile-back">
+                                                    <a href="javascript:;" class="js-qrcode-back" data-i18n="Login.QrCodeLogin.back">返回扫描二维码</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="scancode-qrcode-right" class="fr">
+                                        <div class="scan-phonetip" id="js-scan-phonetip"></div>
+                                    </div>
+                                </div>
+                                <div class="scancode-tip clearfix">
+                                    <div class="scan-tip-icon fl"></div>
+                                    <div class="scan-note fr">
+                                        <span class="note1" data-i18n="Login.QrCodeLogin.note1">打开</span>
+                                        <a href="//www.douyu.com/client?platform=2" class="note2" target="_blank" data-i18n="Login.QrCodeLogin.note2">斗鱼APP</a>
+                                        <span class="line"></span>
+                                        <span class="note2" data-i18n="Login.QrCodeLogin.note4">微信</span>
+                                        <span class="line"></span>
+                                        <span class="note2" data-i18n="Login.QrCodeLogin.note5">QQ</span>
+                                        <p class="note3"><span data-i18n="Login.QrCodeLogin.note6">或者</span><span class="note2" data-i18n="Login.QrCodeLogin.note7">微博</span><span data-i18n="Login.QrCodeLogin.note3">扫一扫登录</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scancode-footer">
+                                <div class="scancode-link clearfix">
+                                    <a class="scancide-to fr" href="/member/regNew?client_id=1&lang=cn" data-type="reg" data-i18n="Login.QrCodeLogin.toReg">免费注册</a>
+                                    <span class="link-border fr">|</span>
+                                    <span class="scancide-to js-to-link js-need-param fr" data-type="login" data-i18n="Login.QrCodeLogin.toLogin">密码登录</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 扫码的结构 end -->
+                        <!--#43111-Web端扫码登录插件-->
+                    </div>
+                    <!--#43111-Web端扫码登录插件-->
+                    <div class="loginNormal js-login-normal hide">
+                        <div class="loginbox-hd js-loginbox-hd">
+                            <div class="loginbox-hd-tab">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="t-login current js-loginbox-tab" data-i18n="Login">登录斗鱼</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="loginbox-bd loginbox-login" data-type="login">
+                            <div class="scanicon-switch-box">
+                                <div class="scanicon-qrcode js-qrcode-switch"></div>
+                                <div class="scancode-tips">
+                                    <span class="scancode-tip-icon scancode-tip-shield"></span>
+                                    <span class="scancode-tip-words" data-i18n="Login.QrCodeLogin.whereSafer">扫码登录更安全</span>
+                                </div>
+                            </div>
+                            <div class="loginbox-bd-container">
+                                <div class="loginbox-login-subtype">
+                                    <span class="l-stype js-l-stype active" data-i18n="Login.Subtype.phonenum" data-subtype="login-by-phoneNum">手机登录</span>
+                                    <span class="l-divider">|</span>
+                                    <span class="l-stype js-l-stype" data-i18n="Login.Subtype.nickname" data-subtype="login-by-nickname">昵称登录</span>
+                                </div>
+
+                                <form class="login-form login-by-phoneNum" action="" method="post" data-type="log">
+                                    <input type="hidden" name="login_type" value="nickname">
+                                    <!-- 手机号 -->
+                                    <div class="loginbox-p login-by-phoneNum login-by-sms">
+                                        <div class="clearfix loginbox-p-stype-item active">
+                                            <div class="selectCountry-box js-selectCountry-box"></div>
+                                            <input type="text" class="fr ipt ipt-need-parent country-phonenum" name="phoneNum" placeholder="请输入手机号码" data-i18n="Login.phoneNumber" maxlength="11" value="" />
+                                        </div>
+                                    </div>
+                                    <!-- 昵称 -->
+                                    <div class="loginbox-p login-by-nickname">
+                                        <div class="loginbox-p-stype-item">
+                                            <span class="ipt-span ipt1"></span>
+                                            <input class="ipt" type="text" name="username" placeholder="输入昵称" data-i18n="Login.userName">
+                                        </div>
+                                    </div>
+                                    <!-- 密码框 -->
+                                    <div class="loginbox-p login-by-phoneNum login-by-nickname">
+                                        <span class="ipt-span ipt2"></span>
+                                        <input class="ipt" type="password" name="password" placeholder="输入密码" autocomplete="off" data-i18n="Login.password">
+                                        <input class="ipt showpw1 notsub" type="text" name="password" placeholder="输入密码" autocomplete="off" data-i18n="Login.password"/>
+                                        <span class="pw-span pw-hide pw-hide1"></span>
+                                    </div>
+                                    <!-- 极验 -->
+                                                                            <div class="captcha-gt"></div>
+                                                                        <!-- 短信验证 -->
+                                    <div class="loginbox-p login-by-sms">
+                                        <div class="clearfix">
+                                            <div class="form-field">
+                                                <div class="clearfix">
+                                                    <input type="text" class="ipt fl loginbox-phone-yzp" size="6" maxlength="6" id="yzphonenum" name="phoneCaptcha" data-i18n="Phone.inputVerifyNumber" placeholder="输入验证码">
+                                                    <input class="phone-send js-sendvoice fl" type="button" value="短信验证" data-i18n="Phone.speechVerify" data-sms-isoutside="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="myuser-tip login-cheak-sms"></p>
+                                    </div>
+                                    <div class="login-sbt-con">
+                                        <input class="loginbox-sbt btn-sub" data-i18n="Login" type="submit" value="登录">
+                                        <div class="loginbox-noact clearfix">
+                                            <a href="/member/login?lang=en&type=login&client_id=1" class="login-box-eng fl">English Mode</a>
+                                            <a href="/member/login?lang=cn&type=login&client_id=1" class="login-box-ch fl">中文入口</a>
+                                            <a href="javascript:void(0);" class="login-type-enter login-by-phoneNum" data-subtype="login-by-sms" data-i18n="Login.quickLogin">手机快捷登录</a>
+                                            <a href="javascript:void(0);" class="login-type-enter login-by-sms" data-subtype="login-by-phoneNum"  data-i18n="Login.phonePasswordLogin">手机密码登录</a>
+                                            <a class="anchor_line forget-pwd" href="https://www.douyu.com/member/findpassword" target="_blank" data-i18n="Login.forgetPassword">忘记密码?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="third-text" data-i18n="Common.thirdParty">其他登录方式</p>
+                                <div class="third-list clearfix ">
+                                    <a href="https://www.douyu.com/member/oauth/signin/qq?biz_type=1&ref_url=https%3A%2F%2Fwww.douyu.com%2Fmember%2Fcp" class="fl third-icon third-icon-qq" target="_blank"
+                                    title="QQ帐号登录" data-i18n="Common.qq"
+                                    data-point-2="qq"></a>
+                                    <a href="https://www.douyu.com/member/oauth/signin/weixin?biz_type=1&ref_url=https%3A%2F%2Fwww.douyu.com%2Fmember%2Fcp" class="fl third-icon third-icon-wx" target="_blank"
+                                    title="微信帐号登录" data-i18n="Common.wechat"
+                                    data-point-2="wx"></a>
+                                    <a href="https://www.douyu.com/member/oauth/signin/weibo?biz_type=1&ref_url=https%3A%2F%2Fwww.douyu.com%2Fmember%2Fcp" class="fl third-icon third-icon-wb third-icon-last"
+                                    target="_blank" data-i18n="Common.weibo"
+                                    title="微博帐号登录" data-point-2="wb"></a>
+                                                                    </div>
+
+                                <!-- #40128-帐号体系_英文版 切换注册-->
+                                <span class="login-box-toptxt">
+                                    <span data-i18n="Login.NoAccount">没有帐号？</span>
+                                    <a href="/member/regNew?lang=cn&client_id=1" title="5秒马上注册" class="anchor_line js-switch-reg js-need-param" data-i18n="Register">5秒注册&gt;</a>
+                                </span>
+                                <!-- #40128-帐号体系_英文版 切换注册-->
+
+                                <p class="loginbox-or-line"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="outlink-bg">
+            <div class="outlink">
+                <ul class="about">
+                    <li><a href="https://www.douyu.com/cms/about/about_us.html" target="_blank">关于我们</a><span>|</span></li>
+                    <li>
+                        <a href="https://kefu.douyu.com/nx/index.html"
+                           target="_blank">联系客服</a><span>|</span></li>
+                    <li><a href="https://www.douyu.com/cms/about/jobs.html" target="_blank">招聘信息</a><span>|</span></li>
+                    <li><a href="https://www.douyu.com/cms/about/cooperate.html" target="_blank">友情链接</a><span>|</span></li>
+                    <li><a href="https://www.douyu.com/cms/zhibo/list_16.shtml" target="_blank">我要直播</a><span>|</span></li>
+                    <li><a href="https://www.douyu.com/member/message/release" target="_blank"
+                           onclick="try{ check_message(); return false; } catch(e){}">意见反馈</a><span>|</span></li>
+                    <li><a href="https://www.douyu.com/cms/gong/201509/22/2229.shtml" target="_blank">版权保护投诉指引</a><span>|</span></li>
+                    <li><a href="https://www.douyu.com/verifyqq" target="_blank">官方QQ号查询</a></li>
+                </ul>
+                <p id="footer-company-info-1" style="display:none">武汉斗鱼网络科技有限公司 版权所有 ©www.douyutv.com 粤ICP备14043701号-1 | <a
+                        href="https://shark.douyucdn.cn/app/douyu/res/dyidcard2.png" target="_blank" style="color:#b1b1b1">粤网文[2014]0686-286
+                        号</a><br>公司地址：湖北省武汉市东湖开发区光谷软件园F4栋8楼 客户服务热线：027-65026248</p>
+
+                <p id="footer-company-info-2" style="">武汉斗鱼网络科技有限公司 版权所有 ©www.douyu.com 鄂ICP备15011961号-1 | <a
+                        target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42018502000107"
+                        style="color: #b1b1b1;"><img src="https://staticlive.douyucdn.cn/common/douyu/images/ghs.png"
+                                                     style="vertical-align: text-bottom;">鄂公网安备 42018502000107号</a> | <a
+                        href="https://shark.douyucdn.cn/app/douyu/res/dyidcard.jpg" target="_blank" style="color:#b1b1b1">鄂网文[2015]1925-037
+                        号</a><br>公司地址：湖北省武汉市东湖开发区光谷软件园F4栋8楼 客户服务热线：027-65026248</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://shark.douyucdn.cn/shark/lib/js/port/shark-all.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/shark/lib/js/lib/jquery.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/json2.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/hm.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/jquery.qrcode.min.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/art-dialog-dy/jquery.artDialog.js?skin=blue"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/art-dialog-dy/plugins/iframeTools.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/jquery.placeholder.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/i18n/jquery.i18n.properties.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/third/jquery.mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/app/douyu-passport/js/page/login/app-all.js?v=v20190307"></script><script type="text/javascript" src="https://shark.douyucdn.cn/stream/dist/dys-douyutv.js?v=v20190307"></script>
+</body>
+</html>
